@@ -1,0 +1,297 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
+
+:root {
+    --primary-color: #f5f5f5;
+    --secondary-color: #35baf3;
+    --large-text-color: #343a40;
+    --secondary-text-color: #6c757d;
+    --font-size: 16px;
+    --border-radius: 15px;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--primary-color);
+}
+
+/*  NAVBARRR */
+nav{
+    background-color: var(--primary-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 2rem 1rem 2rem;
+}
+
+.logo-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo{
+    font-size: 1.8rem;
+    background: -webkit-linear-gradient(#44C6FC, #0b5498);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.brand-line{
+    font-size: .6rem;
+    color: var(--secondary-text-color);
+}
+
+/* END OF NAVBAR */
+
+/* HOME BODY */
+.home-container{
+    padding: 1rem 2rem;
+    width: 100%;
+}
+
+.user{
+    padding: 0 1rem;
+    color: var(--large-text-color);
+    font-size: 2rem;
+}
+
+.vaccines-container{
+    display: flex;
+    padding: 1rem;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-container{
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+}
+
+.card{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 4rem;
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: 1px 1px 20px #88888839;
+}
+.card > div{
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+.card-title{
+    font-weight: 400;
+    color: var(--secondary-text-color);
+    font-size: 1rem;
+}
+
+.card-details{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.icon{
+    font-size: 3.5rem;
+    color: var(--secondary-color);
+}
+
+.vaccine-status, .count{
+    color: var(--large-text-color);
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+.vaccine-list{
+    width:  65%;
+    background-color: white;
+    border-radius: var(--border-radius);
+    min-height: 320px;
+    border-radius: var(--border-radius);
+    box-shadow: 1px 1px 20px #88888839;
+}
+
+.vaccine-list{
+    padding: 1.5rem;
+}
+
+.vaclist-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding: 0 1rem;
+}
+
+.vaccine-list div h4{
+    font-weight: 700;
+    color: var(--large-text-color);
+    font-size: 1.3rem;
+
+}
+
+.add-icon{
+    color: var(--secondary-color);
+    font-size: 2.5rem;
+}
+
+.vaccine-item-wrapper{
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.vaccine-item-container{
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.vaccine-record{
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+.vaccine-record .vaccine-name{
+    color: var(--large-text-color);
+    font-size: .9rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: .2rem;
+}
+
+.vaccine-record .vaccine-location, .vaccine-record .vaccine-date{
+    color: var(--secondary-text-color);
+    font-weight: 400;
+    font-size: .9rem;
+}
+
+#alternate{
+    background-color: rgba(243, 243, 243, 0.434);
+}
+.vaccine-detail-name{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    padding: 0 1rem;
+}
+
+.vaccine-detail-name .detail-prop{
+    font-size: .9rem;
+    font-weight: 500;
+    color: var(--secondary-text-color);
+}
+
+.actions-icon{
+    display: flex;
+    align-items: center;
+    gap: .7rem;
+}
+
+.edit-icon, .delete-icon{
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.edit-icon{
+    color: rgb(10, 152, 10);
+}
+
+.delete-icon{
+    color: red;
+}
+
+/* MODAL */
+.modal-overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.203);
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.modal{
+    position: relative;
+    gap: 1rem;
+    background-color: white;
+    width: 35%;
+    height: auto;
+    border-radius: var(--border-radius);
+    box-shadow: 1px 1px 20px #88888839;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    z-index: 99;
+}
+
+.close-btn{
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    padding: .5rem;
+    border-radius: 100%;
+    font-size: 2rem;
+    font-weight: 500;
+    cursor: pointer;
+
+}
+
+.close-btn:hover{
+   background-color: #e0e8ef89;
+}
+
+.modal-field-container{
+    display: flex;
+    flex-direction: column;
+    gap: .2rem;
+}
+
+.modal label{
+    color: var(--secondary-text-color);
+    font-size: 1rem;
+}
+
+.modal input{
+    padding: .5rem;
+    font-size: 1rem;
+    border: 1px solid var(--secondary-text-color);
+    border-radius: 5px;
+}
+.modal h3{
+    color: var(--large-text-color);
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+.modal button{
+    background-color: var(--secondary-color);
+    color: white;
+    padding: .6rem;
+    border-radius: 5px;
+    border: none;
+    font-size: 1rem;
+}
+
+.modal button:hover{
+    cursor: pointer;
+    background-color:#35baf3b3;
+}
+
+
