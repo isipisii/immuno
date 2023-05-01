@@ -350,6 +350,11 @@ nav{
     border-radius: 5px;
 }
 
+.date-picker{
+    width: 100%;
+    max-width: 150px;
+}
+
 .modal h3{
     color: var(--large-text-color);
     font-size: 1.5rem;
