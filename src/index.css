@@ -37,7 +37,7 @@ nav{
 }
 
 .logo{
-    font-size: 1.8rem;
+    font-size: 2rem;
     background: -webkit-linear-gradient(#44C6FC, #0b5498);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -67,12 +67,20 @@ nav{
     padding: 1rem;
     justify-content: space-between;
     align-items: center;
+    gap: 1rem;
 }
 
+@media (max-width: 768px){
+    .vaccines-container{
+        flex-direction: column;
+    }
+}
+    
 .card-container{
     display: flex;
     gap: 1rem;
     flex-direction: column;
+    width: 35%
 }
 
 .card{
@@ -80,10 +88,12 @@ nav{
     align-items: center;
     justify-content: center;
     padding: 3rem 4rem;
+    width: 100%;
     background-color: white;
     border-radius: var(--border-radius);
     box-shadow: 1px 1px 20px #88888839;
 }
+
 .card > div{
     display: flex;
     align-items: center;
@@ -121,9 +131,11 @@ nav{
     box-shadow: 1px 1px 20px #88888839;
 }
 
+
 .vaccine-list{
     padding: 1.5rem;
 }
+   
 
 .vaclist-header{
     display: flex;
@@ -140,9 +152,39 @@ nav{
 
 }
 
+@media (max-width: 768px){
+    .vaccine-list{
+       width: 100%;
+       padding: 1.3rem .6rem;
+    }
+
+    .home-container{
+        padding: 1rem 0;
+        width: 100%;
+    }
+    .vaccine-list div h4{
+        font-size: 1.2rem;
+    }
+    .card-container{
+        width: 100%;
+    }
+    .card{
+        padding: 3rem;
+    }
+    
+}
+
 .add-icon{
     color: var(--secondary-color);
     font-size: 2.5rem;
+}
+.add-icon:hover{
+    cursor: pointer;
+    color:#35baf3b3;
+}
+
+.add-icon:active{
+    scale: .9;
 }
 
 .vaccine-item-wrapper{
@@ -159,20 +201,22 @@ nav{
 .vaccine-record{
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 1rem;
     border-radius: 10px;
 }
 
-.vaccine-record .vaccine-name{
+#vac-name{
     color: var(--large-text-color);
-    font-size: .9rem;
+    font-size: .8rem;
     font-weight: 600;
     display: flex;
     align-items: center;
     gap: .2rem;
 }
 
-.vaccine-record .vaccine-location, .vaccine-record .vaccine-date{
+
+.vaccine-record .vaccine-location, .vaccine-record .vaccine-date, .vaccine-record .vaccine-name{
     color: var(--secondary-text-color);
     font-weight: 400;
     font-size: .9rem;
@@ -189,11 +233,13 @@ nav{
     padding: 0 1rem;
 }
 
+
 .vaccine-detail-name .detail-prop{
     font-size: .9rem;
     font-weight: 500;
     color: var(--secondary-text-color);
 }
+
 
 .actions-icon{
     display: flex;
@@ -213,6 +259,34 @@ nav{
 .delete-icon{
     color: red;
 }
+
+.delete-icon:active, .edit-icon:active{
+    scale: .9;
+}
+
+
+@media (max-width: 768px){
+    .vaccine-detail-name .detail-prop{
+        font-size: .7rem;
+    }
+    .vaccine-record .vaccine-location, .vaccine-record .vaccine-date, .vaccine-record .vaccine-name{
+        font-size: .65rem;
+    }
+    .add-icon{
+        font-size: 2rem;
+    }
+
+    .actions-icon{
+        display: flex;
+        align-items: center;
+    }
+
+    .edit-icon, .delete-icon{
+        font-size: 1rem;
+        cursor: pointer;
+    }
+}
+
 
 /* MODAL */
 .modal-overlay{
@@ -294,4 +368,43 @@ nav{
     background-color:#35baf3b3;
 }
 
+.modal button:active{
+    scale: .9;
+}
+
+
+@media (max-width: 768px){
+    .vaccine-detail-name .detail-prop{
+        font-size: .7rem;
+    }
+    .vaccine-record .vaccine-location, .vaccine-record .vaccine-date, .vaccine-record .vaccine-name{
+        font-size: .65rem;
+    }
+    .add-icon{
+        font-size: 2rem;
+    }
+
+    .actions-icon{
+        display: flex;
+        align-items: center;
+        gap: .2rem;
+    }
+
+    .edit-icon, .delete-icon{
+        font-size: 1rem;
+        cursor: pointer;
+    }
+    .modal{
+        width: 80%;
+    }
+
+    .modal h3{
+        font-size: 1.3rem;
+    }
+
+    .modal input,  .modal label, .modal button{
+        font-size: .9rem;
+    }
+
+}
 

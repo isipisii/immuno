@@ -55,7 +55,7 @@ const VaccineList = () => {
               id={index % 2 == 0 ? "alternate" : null}
               key={index}
             >
-              <h5 className="vaccine-name">
+              <h5 className="vaccine-name" id="vac-name">
                 <TbVaccine />
                 {vaccine.vaccineName}
               </h5>

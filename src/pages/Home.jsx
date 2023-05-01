@@ -7,7 +7,6 @@ import AddModal from "../components/AddModal";
 import EditModal from "../components/EditModal";
 
 import { useSelector } from "react-redux";
-import { useDispatch } from "react-redux";
 
 const Home = () => {
   const { isOpen } = useSelector((state) => state.addModal);

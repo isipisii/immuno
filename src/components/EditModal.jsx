@@ -76,7 +76,7 @@ const EditModal = () => {
           />
         </div>
         <button type="submit" onClick={handleSubmit}>
-            Add
+            Update
         </button>
       </form>
     </div>
