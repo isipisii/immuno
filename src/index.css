@@ -414,3 +414,23 @@ nav{
 
 }
 
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 2rem;
+}
+
+.group-mem{
+    text-align: center;
+}
+
+.group-mem h2{
+    color: var(--large-text-color);
+    font-size: 1.2rem;
+}
+
+.group-mem p{
+    color: #6c757d;
+    font-size: .9rem;
+}

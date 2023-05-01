@@ -2,6 +2,7 @@ import React from "react";
 import VaccineList from "../components/VaccineList";
 import { MdVaccines } from "react-icons/md";
 import { RxCounterClockwiseClock } from "react-icons/rx";
+import { AnimatePresence } from "framer-motion";
 
 import AddModal from "../components/AddModal";
 import EditModal from "../components/EditModal";
@@ -44,8 +45,10 @@ const Home = () => {
         <VaccineList />
       </div>
       {/* modals */}
-      {isOpen && <AddModal />}
-      {isEditOpen && <EditModal />}
+      <AnimatePresence>
+        {isOpen && <AddModal />}
+        {isEditOpen && <EditModal />}
+      </AnimatePresence>
     </div>
   );
 };
