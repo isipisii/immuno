@@ -343,12 +343,13 @@ nav{
     font-size: 1rem;
 }
 
-.modal input{
+.modal input, .date-picker{
     padding: .5rem;
     font-size: 1rem;
     border: 1px solid var(--secondary-text-color);
     border-radius: 5px;
 }
+
 .modal h3{
     color: var(--large-text-color);
     font-size: 1.5rem;

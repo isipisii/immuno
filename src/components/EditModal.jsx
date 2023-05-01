@@ -73,6 +73,7 @@ const EditModal = () => {
             onChange={handleDateChange}
             dateFormat="dd/MM/yyyy"
             placeholderText="Date"
+            className="date-picker"
           />
         </div>
         <button type="submit" onClick={handleSubmit}>
