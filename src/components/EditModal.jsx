@@ -3,7 +3,7 @@ import moment from "moment";
 import DatePicker from "react-datepicker";
 import { useDispatch } from "react-redux";
 import { GrClose } from "react-icons/gr";
-import { closeEditModal } from "../features/modal/editModalSlice";
+import { closeEditModal } from "../features/modal/modalSlice";
 import { updateVaccine } from "../features/vaccine/vaccineSlice";
 import { useSelector } from "react-redux";
 import { motion } from "framer-motion";
@@ -22,11 +22,7 @@ const EditModal = () => {
       ...editVacRecord,
       date: moment(editVacRecord.date).format("DD, MMMM  YYYY"),
     };
-    if (
-      editVacRecord.date &&
-      editVacRecord.vaccineName &&
-      editVacRecord.location
-    ) {
+    if (editVacRecord.date && editVacRecord.vaccineName && editVacRecord.location) {
       dispatch(updateVaccine(serializedRecord));
       dispatch(closeEditModal());
     } else alert("Please fill out all fields");

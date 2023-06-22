@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from "react";
-
+import React, { useState } from "react";
+import { closeAddModal } from "../features/modal/modalSlice";
 import { addVaccine } from "../features/vaccine/vaccineSlice";
-import { closeModal } from "../features/modal/addModalSlice";
 import { useDispatch } from "react-redux";
 import { nanoid } from "nanoid";
 import { GrClose } from "react-icons/gr";
@@ -39,7 +38,7 @@ const AddModal = () => {
         location: "",
         id: nanoid(),
       });
-      dispatch(closeModal());
+      dispatch(closeAddModal());
     } else alert("Please fill out all fields");
   }
 
@@ -68,7 +67,7 @@ const AddModal = () => {
         >
           <h3>Record your vaccination</h3>
           <GrClose
-            onClick={() => dispatch(closeModal())}
+            onClick={() => dispatch(closeAddModal())}
             className="close-btn"
           />
           <div className="modal-field-container">
