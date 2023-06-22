@@ -10,7 +10,16 @@ const vaccineSlice = createSlice({
   initialState,
   reducers: {
     addVaccine: (state, action) => {
-      state.vaccineList = [...state.vaccineList, action.payload];
+      const { vaccineName } = action.payload;
+      const isVaccineRecorded = state.vaccineList.some(
+        (vaccineList) => vaccineList.vaccineName === vaccineName
+      );
+
+      if (isVaccineRecorded) {
+        alert(`${vaccineName} vaccine has been recorded`);
+      } else {
+        state.vaccineList = [...state.vaccineList, action.payload];
+      }
     },
     deleteVaccine: (state, action) => {
       state.vaccineList = state.vaccineList.filter(
@@ -28,10 +37,10 @@ const vaccineSlice = createSlice({
     },
     getVaccineRecord: (state, action) => {
       state.vaccineRecord = action.payload;
-    }
+    },
   },
 });
 
-export const { addVaccine, deleteVaccine, updateVaccine, getVaccineRecord} =
+export const { addVaccine, deleteVaccine, updateVaccine, getVaccineRecord } =
   vaccineSlice.actions;
 export const vaccineReducer = vaccineSlice.reducer;
