@@ -10,8 +10,7 @@ import EditModal from "../components/EditModal";
 import { useSelector } from "react-redux";
 
 const Home = () => {
-  const { isOpen } = useSelector((state) => state.addModal);
-  const { isEditOpen } = useSelector((state) => state.editModal);
+  const { isAddModalOpen , isEditModalOpen } = useSelector((state) => state.modal);
   const { vaccineList } = useSelector((state) => state.vaccine);
 
   return (
@@ -46,8 +45,8 @@ const Home = () => {
       </div>
       {/* modals */}
       <AnimatePresence>
-        {isOpen && <AddModal />}
-        {isEditOpen && <EditModal />}
+        {isAddModalOpen && <AddModal />}
+        {isEditModalOpen && <EditModal />}
       </AnimatePresence>
     </div>
   );
