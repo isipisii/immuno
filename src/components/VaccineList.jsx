@@ -1,12 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { AiOutlinePlusCircle } from "react-icons/ai";
-import { openModal } from "../features/modal/addModalSlice";
+import { openAddModal, openEditModal } from "../features/modal/modalSlice";
 import { useDispatch } from "react-redux";
-import {
-  deleteVaccine,
-  updateVaccine,
-} from "../features/vaccine/vaccineSlice";
-import { openEditModal } from "../features/modal/editModalSlice";
+import { deleteVaccine } from "../features/vaccine/vaccineSlice";
 import { useSelector } from "react-redux";
 import { useLocalStorage } from "../hook/useLocalStorage";
 import { getVaccineRecord } from "../features/vaccine/vaccineSlice";
@@ -21,7 +17,7 @@ const VaccineList = () => {
   const [vacList, setVacList] = useLocalStorage("vacList", []); // custom hook local storage
 
   const reversedVacList = [...vacList].reverse();
-  
+
   useEffect(() => {
     // update local storage
     setVacList(vaccineList);
@@ -38,7 +34,7 @@ const VaccineList = () => {
         <h4>Vaccination Record</h4>
         <AiOutlinePlusCircle
           className="add-icon"
-          onClick={() => dispatch(openModal())}
+          onClick={() => dispatch(openAddModal())}
         />
       </div>
       <div className="vaccine-detail-name">
