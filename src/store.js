@@ -1,14 +1,13 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { setupListeners } from "@reduxjs/toolkit/dist/query";
-import { addModalReducer } from "./features/modal/addModalSlice";
+import { modalReducer } from "./features/modal/modalSlice";
 import {vaccineReducer} from "./features/vaccine/vaccineSlice";
-import { editModalReducer } from "./features/modal/editModalSlice";
+
 
 export const store = configureStore({
-  reducer: {
-    addModal: addModalReducer,
+  reducer: {   
     vaccine: vaccineReducer,
-    editModal: editModalReducer,
+    modal: modalReducer
   },
 });
 
